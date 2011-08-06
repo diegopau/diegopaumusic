@@ -1,0 +1,19 @@
+<div class="left_column span-4">
+
+  <div id="blue_box" class="span-4">
+    <%= link_to image_tag("speaker.png", :width => "120px"), posts_path %>
+  </div>
+
+  <div id="tags">
+    <p>Tags:</p>
+    <ul>
+      <% @tags.each do |tag| %>
+
+          <li><%= link_to "#{tag.name} (#{tag.posts.count})", {:controller => 'posts', :action => 'search_result', :tag => tag.name} %> </li>
+
+      <% end %>
+    </ul>
+  </div>
+
+
+</div>

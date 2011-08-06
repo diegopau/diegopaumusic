@@ -1,0 +1,18 @@
+<%= render :partial => 'left_column_search_done' %>
+
+<%= render :partial => 'cabecera_search_done' %>
+
+<div class="cuerpo span-20 last">
+
+  <div class="posts span-14">
+
+     <%= render :partial => 'post', :collection => @posts %>
+
+    <%= paginate @posts %>
+
+  </div>
+
+  <%= render :partial => 'right_column' %>
+
+</div>
+<br/>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @title %></title>
+
+  <!-- [if lt IE9]>
+     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <!-- [endif] -->
+
+  <%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
+  <%= stylesheet_link_tag 'blueprint/print', :media => 'print' %>
+  <!-- [if lt IE 8]><%= stylesheet_link_tag 'blueprint/ie' %> <![endif] -->
+  <%= stylesheet_link_tag 'general', :media => 'screen' %>
+  <%= stylesheet_link_tag 'posts', :media => 'screen' %>
+
+  <%= javascript_include_tag :defaults %>
+
+  <%= csrf_meta_tag %>
+
+  <%- # codigo proporcionado por http://sharethis.com -%>
+  <script type="text/javascript">var switchTo5x = true;</script>
+  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+  <script type="text/javascript">stLight.options({publisher:'c76a33c5-874d-428d-9d85-0e6833f06d5b',onhover:false});</script>
+
+  <meta name="description" content="Diego Pau Music"/>
+  <meta name="keywords" content="music,diegopau,diego pau music,songwriter<%if @meta_tags %><% @meta_tags.each do |tag| %>,<%=tag.name%><% end %><% end%>"/>
+  <meta name="author" content="Diego Pau - Diego Ocampo Perez"/>
+
+</head>
+<body>
+<div class="container">
+  <%= yield %>
+</div>
+
+<%= debug(params) if Rails.env.development? %>
+
+</body>
+</html>
